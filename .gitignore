@@ -58,5 +58,10 @@ docs/_build/
 # PyBuilder
 target/
 
-#Ipython Notebook
+# Ipython Notebook
 .ipynb_checkpoints
+
+# Ionic
+node_modules/
+platforms/
+plugins/
