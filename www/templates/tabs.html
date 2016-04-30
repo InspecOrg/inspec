@@ -5,13 +5,23 @@ navigation history that also transitions its views in and out.
 -->
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
-  <!-- Home Tab -->
-  <ion-tab title="Home" icon-off="ion-home" icon-on="ion-home" href="#/tab/home">
-    <ion-nav-view name="tab-home"></ion-nav-view>
+  <!--Dash Tab-->
+  <ion-tab title="Dashboard" icon="ion-home" href="#/tab/dash">
+    <ion-nav-view name="tab-dash"></ion-nav-view>
   </ion-tab>
 
-  <!-- Account Tab -->
-  <ion-tab title="Account" icon-off="ion-person" icon-on="ion-person" href="#/tab/account">
+  <!--Busca Tab-->
+  <ion-tab title="Buscar" icon="ion-search" href="#/tab/search">
+    <ion-nav-view name="tab-search"></ion-nav-view>
+  </ion-tab>
+
+  <!--Conta Tab-->
+  <ion-tab title="Conta" icon="ion-person" href="#/tab/account">
     <ion-nav-view name="tab-account"></ion-nav-view>
+  </ion-tab>
+
+  <!--Sobre Tab-->
+  <ion-tab title="Sobre" icon="ion-help" href="#/tab/about">
+    <ion-nav-view name="tab-about"></ion-nav-view>
   </ion-tab>
 </ion-tabs>

@@ -1,9 +1,9 @@
-angular.module('starter.controllers', [])
+angular.module('inspec.controllers', [])
 
-.controller('HomeCtrl', function($scope) {})
+.controller('DashCtrl', function($scope) {})
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
-});
+.controller('SearchCtrl', function($scope) {})
+
+.controller('AccountCtrl', function($scope) {})
+
+.controller('AboutCtrl', function($scope) {});
