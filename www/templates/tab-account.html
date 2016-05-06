@@ -1,27 +1,29 @@
 <ion-view view-title="Conta">
   <ion-content>
-    <ion-list novalidate>
-      <label class="item item-input item-floating-label">
-        <span class="input-label">Email</span>
-        <input id="email" type="email" placeholder="Email" ng-model="usuario.email">
-      </label>
-      <label class="item item-input item-floating-label">
-        <span class="input-label">Senha</span>
-        <input id="senha" type="password" placeholder="Senha" ng-model="usuario.senha">
-      </label>
-      <ion-item class="item-toggle">
-        Mantenha-me conectado
-        <label class="toggle toggle-positive">
-          <input type="checkbox">
-          <div class="track">
-            <div class="handle"></div>
-          </div>
+    <form ng-submit="signIn(usuario)">
+      <ion-list>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Email</span>
+          <input id="email" type="email" placeholder="Email" ng-model="usuario.email">
         </label>
-      </ion-item>
-      <div class="padding text-center">
-        <button type="submit" class="button button-positive icon-left ion-log-in">Autenticar</button>
-        <button class="button button-stable icon-left ion-compose" ng-click="openModal()">Registrar</button>
-      </div>
-    </ion-list>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Senha</span>
+          <input id="senha" type="password" placeholder="Senha" ng-model="usuario.senha">
+        </label>
+        <ion-item class="item-toggle">
+          Mantenha-me conectado
+          <label class="toggle toggle-positive">
+            <input type="checkbox">
+            <div class="track">
+              <div class="handle"></div>
+            </div>
+          </label>
+        </ion-item>
+        <div class="padding text-center">
+          <button type="submit" class="button button-positive icon-left ion-log-in">Autenticar</button>
+          <button class="button button-stable icon-left ion-compose" ng-click="openModal()">Registrar</button>
+        </div>
+      </ion-list>
+    </form>
   </ion-content>
 </ion-view>

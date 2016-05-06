@@ -4,7 +4,7 @@ angular.module('inspec.controllers', [])
 
 .controller('SearchCtrl', function($scope) {})
 
-.controller('AccountCtrl', function($scope, $ionicModal) {
+.controller('AccountCtrl', function($scope, $ionicModal, $ionicPopup, Usuarios) {
   $ionicModal.fromTemplateUrl('templates/modal-signup.html', {
     scope: $scope,
     animation: 'slide-in-up'
@@ -18,6 +18,23 @@ angular.module('inspec.controllers', [])
 
   $scope.closeModal = function() {
     $scope.modal.hide();
+  };
+
+  $scope.showAlert = function() {
+    var alertPopup = $ionicPopup.alert({
+      title: 'Registro',
+      template: 'Usuário registrado?'
+    });
+  };
+
+  $scope.signUp = function(usuario) {
+    Usuarios.new(usuario);
+    $scope.closeModal();
+    $scope.showAlert();
+  };
+
+  $scope.signIn = function(usuario) {
+    console.log(usuario);
   };
 
   $scope.$on('$destroy', function() {
