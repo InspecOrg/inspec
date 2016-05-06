@@ -1,4 +1,11 @@
 {
   "name": "Inspec",
-  "app_id": ""
+  "app_id": "",
+  "proxies": [
+    {
+        "path": "/v1",
+        "proxyUrl": "http://inspec.chocoelho.org/api/v1"
+    }
+  ]
+  
 }

@@ -6,4 +6,8 @@ angular.module('inspec.controllers', [])
 
 .controller('AccountCtrl', function($scope) {})
 
-.controller('AboutCtrl', function($scope) {});
+.controller('AboutCtrl', function($scope) {})
+
+.controller('ConveniosCtrl', function($scope) {
+  $scope.convenios = Convenios.all();
+});

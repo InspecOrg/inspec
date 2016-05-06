@@ -1,11 +1,10 @@
 // Ionic Inspec App
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('inspec', ['ionic', 'inspec.controllers', 'inspec.services'])
+angular.module('inspec', ['ionic', 'inspec.controllers', 'inspec.services', 'restangular'])
+
+.constant('apiEndpoint', {
+  url: 'http://inspec.chocoelho.org/api/v1'
+})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -23,15 +22,14 @@ angular.module('inspec', ['ionic', 'inspec.controllers', 'inspec.services'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, RestangularProvider, apiEndpoint) {
 
-  // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-  // Each state's controller can be found in controllers.js
+  RestangularProvider.setBaseUrl(apiEndpoint.url);
+  RestangularProvider.setFullResponse(true);
+
   $stateProvider
 
-    .state('tab', {
+  .state('tab', {
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
@@ -43,6 +41,16 @@ angular.module('inspec', ['ionic', 'inspec.controllers', 'inspec.services'])
       'tab-dash': {
         templateUrl: 'templates/tab-dash.html',
         controller: 'DashCtrl'
+      }
+    }
+  })
+
+  .state('tab.convenios', {
+    url: '/convenios',
+    views: {
+      'tab-convenios': {
+        templateUrl: 'templates/tab-convenios.html',
+        controller: 'ConveniosCtrl'
       }
     }
   })
