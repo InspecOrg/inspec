@@ -1,18 +1,26 @@
 <ion-view view-title="Conta">
   <ion-content>
-    <ion-list>
-      <ion-item class="item-input item-floating-label">
+    <ion-list novalidate>
+      <label class="item item-input item-floating-label">
         <span class="input-label">Email</span>
-        <input type="email" placeholder="Email">
-      </ion-item>
-      <ion-item class="item-input item-floating-label">
+        <input id="email" type="email" placeholder="Email" ng-model="usuario.email">
+      </label>
+      <label class="item item-input item-floating-label">
         <span class="input-label">Senha</span>
-        <input type="password" placeholder="Senha">
+        <input id="senha" type="password" placeholder="Senha" ng-model="usuario.senha">
+      </label>
+      <ion-item class="item-toggle">
+        Mantenha-me conectado
+        <label class="toggle toggle-positive">
+          <input type="checkbox">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
       </ion-item>
-      <div class="padding">
-        <button class="button button-block button-positive ion-log-in">
-          Entrar
-        </button>
+      <div class="padding text-center">
+        <button type="submit" class="button button-positive icon-left ion-log-in">Autenticar</button>
+        <button class="button button-stable icon-left ion-compose">Registrar</button>
       </div>
     </ion-list>
   </ion-content>
