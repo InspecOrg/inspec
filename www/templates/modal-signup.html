@@ -1,42 +1,43 @@
 <ion-modal-view>
   <ion-header-bar>
     <h1 class="title">Registrar</h1>
+    <button class="button button-clear button-positive" ng-click="closeModal()">Cancelar</button>
   </ion-header-bar>
   <ion-content>
-    <form ng-submit="signUp(usuario)">
+    <form ng-submit="signUp(novoUsuario)">
       <div class="list">
         <label class="item item-input">
           <span class="input-label">Nome</span>
-          <input type="text" ng-model="usuario.nome">
+          <input type="text" ng-model="novoUsuario.nome">
         </label>
         <label class="item item-input">
           <span class="input-label">Data de nascimento</span>
-          <input type="date" ng-model="usuario.data_nascimento">
+          <input type="date" ng-model="novoUsuario.data_nascimento">
         </label>
         <label class="item item-input item-select">
           <div class="input-label">
             Sexo
           </div>
-          <select ng-model="usuario.sexo">
+          <select ng-model="novoUsuario.sexo">
             <option value="'M'">Masculino</option>
             <option value="'F'">Feminino</option>
           </select>
         </label>
         <label class="item item-input">
           <span class="input-label">RG</span>
-          <input type="text" ng-model="usuario.rg">
+          <input type="text" ng-model="novoUsuario.rg">
         </label>
         <label class="item item-input">
           <span class="input-label">CPF</span>
-          <input type="text" ng-model="usuario.cpf">
+          <input type="text" ng-model="novoUsuario.cpf">
         </label>
         <label class="item item-input">
           <span class="input-label">Email</span>
-          <input type="email" ng-model="usuario.email">
+          <input type="email" ng-model="novoUsuario.email">
         </label>
         <label class="item item-input">
           <span class="input-label">Senha</span>
-          <input type="password" ng-model="usuario.senha">
+          <input type="password" ng-model="novoUsuario.senha">
         </label>
         <label class="item">
           <button class="button button-block button-positive" type="submit" >Registrar</button>

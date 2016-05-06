@@ -27,8 +27,8 @@ angular.module('inspec.controllers', [])
     });
   };
 
-  $scope.signUp = function(usuario) {
-    Usuarios.new(usuario);
+  $scope.signUp = function(novoUsuario) {
+    Usuarios.new(novoUsuario);
     $scope.closeModal();
     $scope.showAlert();
   };
