@@ -4,10 +4,11 @@ angular.module('inspec.controllers', [])
 
 .controller('SearchCtrl', function($scope) {})
 
-.controller('AccountCtrl', function($scope) {})
+.controller('AccountCtrl', function($scope) {
+})
 
 .controller('AboutCtrl', function($scope) {})
 
-.controller('ConveniosCtrl', function($scope) {
+.controller('ConveniosCtrl', function($scope, Convenios) {
   $scope.convenios = Convenios.all();
 });

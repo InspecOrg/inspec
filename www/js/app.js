@@ -2,8 +2,9 @@
 
 angular.module('inspec', ['ionic', 'inspec.controllers', 'inspec.services', 'restangular'])
 
-.constant('apiEndpoint', {
-  url: 'http://inspec.chocoelho.org/api/v1'
+.constant('ApiEndpoint', {
+  url: 'v1'
+  //url: 'http://inspec.chocoelho.org/api/v1'
 })
 
 .run(function($ionicPlatform) {
@@ -22,11 +23,18 @@ angular.module('inspec', ['ionic', 'inspec.controllers', 'inspec.services', 'res
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider, RestangularProvider, apiEndpoint) {
+.config(function($stateProvider, $urlRouterProvider, RestangularProvider, ApiEndpoint) {
 
-  RestangularProvider.setBaseUrl(apiEndpoint.url);
-  RestangularProvider.setFullResponse(true);
-
+  RestangularProvider.setBaseUrl(ApiEndpoint.url);
+  RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
+    var extractedData;
+    if (operation === "getList") {
+      extractedData = data.data;
+    } else {
+      extractedData = data;
+    }
+    return extractedData;
+  });
   $stateProvider
 
   .state('tab', {

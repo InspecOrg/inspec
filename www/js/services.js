@@ -1,9 +1,14 @@
 angular.module('inspec.services', [])
 
 .factory('Convenios', function(Restangular) {
+  serviceConvenios = Restangular.service('convenios')
+
   return {
     all: function() {
-      return Restangular.all('convenios').getList().$object;
+      return serviceConvenios.getList().$object;
+    },
+    show: function(id) {
+      return serviceConvenios.one(id);
     }
   };
-})
+});

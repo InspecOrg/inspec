@@ -1,4 +1,10 @@
 <ion-view view-title="Convênios">
   <ion-content class="padding">
+    <div class="card" ng-repeat="convenio in convenios">
+      <a class="item text-center" href="">
+        <h2 ng-bind="convenio.processo_convenio"></h2>
+        <p ng-bind="convenio.modalidade"></p>
+      </a>
+    </div>
   </ion-content>
 </ion-view>
