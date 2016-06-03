@@ -65,3 +65,4 @@ target/
 node_modules/
 platforms/
 plugins/
+www/js/appsettings.js

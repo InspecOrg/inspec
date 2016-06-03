@@ -2,11 +2,6 @@
 
 angular.module('inspec', ['ionic', 'inspec.controllers', 'inspec.services', 'restangular'])
 
-.constant('ApiEndpoint', {
-  url: 'v1'
-  //url: 'http://inspec.chocoelho.org/api/v1'
-})
-
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -23,9 +18,9 @@ angular.module('inspec', ['ionic', 'inspec.controllers', 'inspec.services', 'res
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider, RestangularProvider, ApiEndpoint) {
+.config(function($stateProvider, $urlRouterProvider, RestangularProvider) {
 
-  RestangularProvider.setBaseUrl(ApiEndpoint.url);
+  RestangularProvider.setBaseUrl(AppSettings.baseApiUrl);
   RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
     var extractedData;
     if (operation === "getList") {
