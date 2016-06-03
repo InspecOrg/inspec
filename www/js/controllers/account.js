@@ -16,17 +16,25 @@ angular.module('inspec.controllers')
     $scope.modal.hide();
   };
 
-  $scope.showAlert = function() {
+  $scope.showAlert = function(message) {
     var alertPopup = $ionicPopup.alert({
       title: 'Registro',
-      template: 'Usuário registrado?'
+      template: message
     });
   };
 
   $scope.signUp = function(novoUsuario) {
-    Usuarios.new(novoUsuario);
-    $scope.closeModal();
-    $scope.showAlert();
+    Usuarios.new(novoUsuario)
+    .then(function(response) {
+      $scope.closeModal();
+      $scope.showAlert("Usuário cadastrado com sucesso!");
+    }, function(response) {
+      console.log(response);
+
+      $scope.showAlert("Erro ao cadastrar usuário.");
+    });
+
+
   };
 
   $scope.signIn = function(usuario) {

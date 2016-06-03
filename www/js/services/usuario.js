@@ -6,7 +6,7 @@ angular.module('inspec.services')
   return {
     new: function(data) {
       console.log(data);
-      serviceUsuarios.post({data});
+      return serviceUsuarios.post({usuario: data});
     }
   };
 });
